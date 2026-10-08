@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Joseph WODOME, étudiant en Systèmes et Réseaux Informatiques à ESIG Global Success, Togo." />
+  <meta name="author" content="Joseph WODOME" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Joseph WODOME | Portfolio Systèmes & Réseaux Informatiques" />
+  <meta property="og:description" content="Étudiant en Systèmes et Réseaux Informatiques — Réseaux, Cybersécurité, Virtualisation, Bases de données." />
+  <meta property="og:type" content="website" />
+
+  <title>Joseph WODOME | Portfolio Systèmes & Réseaux Informatiques</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       ARRIÈRE-PLAN TECHNIQUE (grille + réseau subtil)
+       ============================================================ -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-network" aria-hidden="true">
+    <canvas id="network-canvas"></canvas>
+  </div>
+
+  <!-- ============================================================
+       TOP BAR — Navigation horizontale (comme l'image de référence)
+       ============================================================ -->
+  <header class="topbar">
+    <nav class="topbar__nav" aria-label="Navigation principale">
+      <a href="#accueil" class="nav-link is-active" data-nav>Accueil</a>
+      <a href="#parcours" class="nav-link" data-nav>Parcours</a>
+      <a href="#competences" class="nav-link" data-nav>Compétences</a>
+      <a href="#tp" class="nav-link" data-nav>TP</a>
+      <a href="#projets" class="nav-link" data-nav>Projets</a>
+      <a href="#contact" class="nav-link" data-nav>Contact</a>
+    </nav>
+
+    <a href="https://www.linkedin.com/in/joseph-wodome-0862ba3aa/" class="btn btn--cv" target="_blank" rel="noopener noreferrer">
+      <span>Profil LinkedIn</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </a>
+
+    <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ============================================================
+       LAYOUT PRINCIPAL — Sidebar gauche + Contenu droite
+       ============================================================ -->
+  <div class="layout">
+
+    <!-- --------------------------------------------------------
+         SIDEBAR GAUCHE (structure identique à l'image)
+         -------------------------------------------------------- -->
+    <aside class="sidebar" aria-label="Profil">
+      <!-- Logo / Initiales -->
+      <div class="sidebar__brand">
+        <div class="brand-mark">JW</div>
+        <div class="brand-text">
+          <strong>Joseph</strong>
+          <span>WODOME</span>
+        </div>
+      </div>
+
+      <!-- Photo / Avatar -->
+      <div class="sidebar__avatar">
+        <img src="img/g.jpeg" alt="Portrait de Joseph WODOME" onerror="this.style.display='none'; this.parentElement.classList.add('avatar--fallback')" />
+        <div class="avatar-fallback">JW</div>
+      </div>
+
+      <!-- Infos rapides -->
+      <div class="sidebar__info">
+        <div class="info-block">
+          <span class="info-label">Basé à</span>
+          <span class="info-value">Lomé, Togo</span>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Formation</span>
+          <span class="info-value">Licence Systèmes &amp; Réseaux Informatiques</span>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Établissement</span>
+          <span class="info-value">ESIG Global Success</span>
+        </div>
+      </div>
+
+      <!-- Réseaux sociaux -->
+      <div class="sidebar__socials">
+        <a href="https://github.com/jomozanbo" aria-label="GitHub" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.42.36.79 1.08.79 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/joseph-wodome-0862ba3aa/" aria-label="LinkedIn" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
+
+      <!-- Statut -->
+      <div class="sidebar__status">
+        <span class="status-dot"></span>
+        <span>Disponible pour stage / alternance</span>
+      </div>
+    </aside>
+
+    <!-- --------------------------------------------------------
+         CONTENU PRINCIPAL
+         -------------------------------------------------------- -->
+    <main class="main">
+
+      <!-- ========================================================
+           HERO SECTION
+           ======================================================== -->
+      <section id="accueil" class="hero">
+        <div class="hero__badge">
+          <span class="badge-dot"></span>
+          Portfolio 2026 — Systèmes &amp; Réseaux
+        </div>
+
+        <h1 class="hero__title">
+          Je suis <span class="accent">Joseph WODOME</span><br />
+          Étudiant en Systèmes<br />
+          &amp; Réseaux Informatiques.
+        </h1>
+
+        <p class="hero__subtitle">
+          Je développe mes compétences dans les systèmes, les réseaux informatiques,
+          la cybersécurité, la virtualisation, les bases de données et le développement
+          de solutions informatiques.
+        </p>
+
+        <div class="hero__tags">
+          <span class="tag">Réseaux</span>
+          <span class="tag">Systèmes</span>
+          <span class="tag">Cybersécurité</span>
+          <span class="tag">Virtualisation</span>
+          <span class="tag">Bases de données</span>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#parcours" class="btn btn--primary">
+            Découvrir mon parcours
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#projets" class="btn btn--ghost">
+            Voir mes projets
+          </a>
+        </div>
+
+        <!-- Terminal décoratif -->
+        <div class="hero__terminal" aria-hidden="true">
+          <div class="terminal__bar">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="terminal__title">joseph@esig: ~/portfolio</span>
+          </div>
+          <div class="terminal__body">
+            <p><span class="prompt">$</span> whoami</p>
+            <p class="out">joseph_wodome — étudiant SRI</p>
+            <p><span class="prompt">$</span> cat objectif.txt</p>
+            <p class="out">Concevoir · Administrer · Sécuriser · Maintenir</p>
+            <p><span class="prompt">$</span> <span class="cursor">_</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           À PROPOS
+           ======================================================== -->
+      <section id="apropos" class="section">
+        <div class="section__head">
+          <span class="section__num">01</span>
+          <h2 class="section__title">À propos de moi</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Qui je suis</h3>
+            <p>
+              Je suis étudiant en <strong>Systèmes et Réseaux Informatiques</strong> avec un intérêt
+              particulier pour les infrastructures réseau, l'administration des systèmes,
+              la cybersécurité, la virtualisation et les technologies informatiques.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>Mon objectif</h3>
+            <p>
+              Mon objectif est de développer progressivement une expertise technique solide
+              et de transformer les connaissances acquises en <strong>solutions concrètes</strong>.
+            </p>
+          </div>
+          <div class="about-card about-card--facts">
+            <ul class="facts">
+              <li><span>Nom</span><strong>Joseph WODOME</strong></li>
+              <li><span>Formation</span><strong>Licence SRI</strong></li>
+              <li><span>École</span><strong>ESIG Global Success</strong></li>
+              <li><span>Pays</span><strong>Togo</strong></li>
+              <li><span>Domaine</span><strong>Informatique / Systèmes / Réseaux</strong></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PARCOURS ACADÉMIQUE
+           ======================================================== -->
+      <section id="parcours" class="section">
+        <div class="section__head">
+          <span class="section__num">02</span>
+          <h2 class="section__title">Parcours académique</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">Licence</span>
+              <h3>Systèmes et Réseaux Informatiques</h3>
+              <p class="timeline__school">ESIG Global Success — Togo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="semesters">
+          <div class="semester-card">
+            <div class="semester-card__head">
+              <span class="semester-tag">Semestre 3</span>
+            </div>
+            <ul class="semester-list">
+              <li>Électronique analogique</li>
+              <li>Gestion de projet</li>
+              <li>Bases de données</li>
+              <li>Commutation et routage</li>
+              <li>Télécommunications et SIG</li>
+              <li>Statistiques et probabilités</li>
+              <li>Virtualisation</li>
+              <li>Docker</li>
+              <li>Cryptographie et sécurité</li>
+            </ul>
+          </div>
+
+          <div class="semester-card">
+            <div class="semester-card__head">
+              <span class="semester-tag">Semestre 4</span>
+            </div>
+            <ul class="semester-list">
+              <li>Analyse et conception d'un système d'information</li>
+              <li>Recherche opérationnelle</li>
+              <li>Analyse numérique</li>
+              <li>CCNA 3</li>
+              <li>Supports de transmission</li>
+              <li>Réseaux informatiques et télécommunications</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           COMPÉTENCES
+           ======================================================== -->
+      <section id="competences" class="section">
+        <div class="section__head">
+          <span class="section__num">03</span>
+          <h2 class="section__title">Mes compétences</h2>
+        </div>
+
+        <!-- RÉSEAUX -->
+        <h3 class="cat-title"><span class="cat-bar"></span>Réseaux</h3>
+        <div class="cards-grid cards-grid--4">
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-network" /></svg></div><h4>IPv4 / IPv6 &amp; subnetting</h4><p>Adressage et découpage des réseaux.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-switch" /></svg></div><h4>VLAN &amp; commutation</h4><p>VLAN, trunk, STP et agrégation de liens.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-route" /></svg></div><h4>Routage</h4><p>Routage statique, dynamique et OSPF.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-layers" /></svg></div><h4>TCP/IP &amp; modèle OSI</h4><p>Compréhension des protocoles et couches réseau.</p><span class="level">Maîtrisé</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-server" /></svg></div><h4>Services réseau</h4><p>ARP, DHCP, DNS et accès SSH.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-diagram" /></svg></div><h4>Cisco Packet Tracer</h4><p>Simulation de topologies réseau.</p><span class="level">En pratique</span></article>
+        </div>
+
+        <!-- CYBERSÉCURITÉ -->
+        <h3 class="cat-title"><span class="cat-bar"></span>Cybersécurité</h3>
+        <div class="cards-grid cards-grid--4">
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-shield" /></svg></div><h4>Sécurité réseau</h4><p>Principes de sécurité et filtrage par pare-feu.</p><span class="level">Notions</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-key" /></svg></div><h4>Cryptographie</h4><p>Chiffrement AES/RSA et sécurisation TLS/HTTPS.</p><span class="level">En apprentissage</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-shield" /></svg></div><h4>Sécurité des commutateurs</h4><p>Port Security, DHCP Snooping et inspection ARP.</p><span class="level">Notions</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-activity" /></svg></div><h4>Wireshark</h4><p>Capture et analyse du trafic réseau.</p><span class="level">En pratique</span></article>
+        </div>
+
+        <!-- SYSTÈMES & VIRTUALISATION -->
+        <h3 class="cat-title"><span class="cat-bar"></span>Systèmes &amp; Virtualisation</h3>
+        <div class="cards-grid cards-grid--4">
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-monitor" /></svg></div><h4>Virtualisation</h4><p>Création de machines virtuelles avec VMware et VirtualBox.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-box" /></svg></div><h4>Docker</h4><p>Conteneurisation d'applications et d'environnements.</p><span class="level">En apprentissage</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-settings" /></svg></div><h4>Administration système</h4><p>Gestion des utilisateurs, services et ressources.</p><span class="level">En apprentissage</span></article>
+        </div>
+
+        <!-- BASES DE DONNÉES -->
+        <h3 class="cat-title"><span class="cat-bar"></span>Bases de données</h3>
+        <div class="cards-grid cards-grid--4">
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-database" /></svg></div><h4>SQL &amp; modèle relationnel</h4><p>Requêtes, relations et jointures entre tables.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-database" /></svg></div><h4>MySQL &amp; PostgreSQL</h4><p>Gestion de bases de données relationnelles.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-database" /></svg></div><h4>NoSQL</h4><p>Notions sur MongoDB et Firebase.</p><span class="level">Notions</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-link" /></svg></div><h4>Modélisation des données</h4><p>Clés et intégrité des données.</p><span class="level">En pratique</span></article>
+        </div>
+
+        <!-- ANALYSE & CONCEPTION SI -->
+        <h3 class="cat-title"><span class="cat-bar"></span>Analyse &amp; Conception des SI</h3>
+        <div class="cards-grid cards-grid--4">
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-clipboard" /></svg></div><h4>Analyse des besoins</h4><p>Identification des exigences d'un projet.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-diagram" /></svg></div><h4>MERISE &amp; UML</h4><p>Modélisation des systèmes d'information.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-diagram" /></svg></div><h4>MCD / MLD</h4><p>Conception des modèles de données.</p><span class="level">En pratique</span></article>
+        </div>
+
+        <!-- TÉLÉCOMMUNICATIONS -->
+        <h3 class="cat-title"><span class="cat-bar"></span>Télécommunications</h3>
+        <div class="cards-grid cards-grid--4">
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-network" /></svg></div><h4>Ethernet</h4><p>Technologie de réseau local filaire.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-wifi" /></svg></div><h4>Réseaux sans fil</h4><p>Wi-Fi, Bluetooth et réseaux mobiles.</p><span class="level">Notions</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-antenna" /></svg></div><h4>Supports de transmission</h4><p>Paire torsadée, fibre optique et liaisons sans fil.</p><span class="level">Notions</span></article>
+        </div>
+
+        <!-- GESTION DE PROJET -->
+        <h3 class="cat-title"><span class="cat-bar"></span>Gestion de projet</h3>
+        <div class="cards-grid cards-grid--4">
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-target" /></svg></div><h4>Planification</h4><p>Objectifs SMART et suivi des tâches avec Gantt.</p><span class="level">En pratique</span></article>
+          <article class="skill-card"><div class="skill-card__icon"><svg aria-hidden="true"><use href="#icon-users" /></svg></div><h4>Travail en équipe</h4><p>Répartition des rôles et collaboration.</p><span class="level">En pratique</span></article>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           TRAVAUX PRATIQUES
+           ======================================================== -->
+      <section id="tp" class="section">
+        <div class="section__head">
+          <span class="section__num">04</span>
+          <h2 class="section__title">Travaux pratiques</h2>
+        </div>
+        <p class="section__intro">
+          Ces fiches présentent les objectifs, les démarches et les contrôles associés
+          aux travaux pratiques. Les illustrations sont des références à remplacer par mes captures.
+        </p>
+
+        <div class="tp-grid">
+          <article class="tp-card">
+            <div class="tp-card__num">TP 01</div>
+            <h4>Configuration réseau</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Construire un réseau local et attribuer une configuration IP cohérente aux équipements.</p>
+              <p><span>Démarche</span>Relier les postes au commutateur, définir les adresses, les masques et la passerelle.</p>
+              <p><span>Outils / commandes</span>Packet Tracer ou terminal, ipconfig, ip addr et ping.</p>
+              <p><span>Vérification</span>Contrôler les paramètres IP puis tester la communication entre les postes et la passerelle.</p>
+              <p><span>Notion clé</span>Une adresse et un masque corrects doivent correspondre au même sous-réseau.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-01-network.png" alt="Schéma de topologies réseau en étoile, anneau, bus et maillage." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 02</div>
+            <h4>VLAN</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Segmenter un réseau local en plusieurs VLAN afin de séparer les domaines de diffusion.</p>
+              <p><span>Démarche</span>Créer les VLAN, affecter les ports d'accès et configurer les liens trunk nécessaires.</p>
+              <p><span>Outils / commandes</span>Commutateurs Cisco, vlan, switchport mode access, switchport mode trunk.</p>
+              <p><span>Vérification</span>Examiner show vlan brief et show interfaces trunk, puis tester les communications attendues.</p>
+              <p><span>Notion clé</span>Les VLAN et les paramètres trunk doivent être cohérents sur les commutateurs reliés.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-02-vlan.jpg" alt="Structure d'une trame Ethernet ISL utilisée dans les VLAN." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 03</div>
+            <h4>Routage</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Permettre la communication entre plusieurs réseaux IP à l'aide de routes statiques.</p>
+              <p><span>Démarche</span>Configurer les interfaces des routeurs, renseigner les routes et vérifier les chemins de retour.</p>
+              <p><span>Outils / commandes</span>Routeurs Cisco, ip route, show ip route et ping.</p>
+              <p><span>Vérification</span>Confirmer la présence des routes dans la table et tester la communication de bout en bout.</p>
+              <p><span>Notion clé</span>Chaque route doit indiquer le réseau de destination et un prochain saut joignable.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-03-routing.png" alt="Schéma de routage d'un paquet IP à travers plusieurs réseaux." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 04</div>
+            <h4>OSPF</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Mettre en place OSPF pour échanger automatiquement les routes entre plusieurs routeurs.</p>
+              <p><span>Démarche</span>Activer le processus OSPF, annoncer les réseaux et contrôler la formation des voisinages.</p>
+              <p><span>Outils / commandes</span>router ospf, network, show ip ospf neighbor et show ip route ospf.</p>
+              <p><span>Vérification</span>Vérifier les adjacences OSPF et la présence des routes apprises dans la table de routage.</p>
+              <p><span>Notion clé</span>Les interfaces, zones et paramètres OSPF doivent être compatibles entre voisins.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-04-ospf.png" alt="Topologie OSPF avec plusieurs zones et routeurs." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 05</div>
+            <h4>IPv6</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Configurer l'adressage IPv6 et assurer la communication entre les équipements du réseau.</p>
+              <p><span>Démarche</span>Attribuer des préfixes IPv6, activer le routage si nécessaire et définir les passerelles.</p>
+              <p><span>Outils / commandes</span>ipv6 address, ipv6 unicast-routing, show ipv6 interface brief et ping.</p>
+              <p><span>Vérification</span>Contrôler les adresses et tester la connectivité IPv6 entre les différents segments.</p>
+              <p><span>Notion clé</span>Un préfixe correctement défini et une passerelle adaptée sont essentiels au routage IPv6.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-05-ipv6.png" alt="Fragmentation de paquets IPv6 en plusieurs fragments." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 06</div>
+            <h4>EtherChannel</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Agréger plusieurs liens physiques pour augmenter la capacité et la résilience d'une liaison.</p>
+              <p><span>Démarche</span>Former un EtherChannel avec des ports compatibles et choisir un protocole comme LACP.</p>
+              <p><span>Outils / commandes</span>channel-group 1 mode active et show etherchannel summary.</p>
+              <p><span>Vérification</span>Contrôler que le port-channel est actif et que les liens membres sont bien agrégés.</p>
+              <p><span>Notion clé</span>Les ports membres doivent avoir des paramètres compatibles, notamment vitesse, mode et VLAN.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-06-etherchannel.jpg" alt="EtherChannel entre deux commutateurs, avec VLAN trunk et routeur." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 07</div>
+            <h4>Administration système</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Administrer un système Linux : comptes, groupes, permissions et services.</p>
+              <p><span>Démarche</span>Créer des utilisateurs, gérer leurs droits et contrôler les services ainsi que la configuration réseau.</p>
+              <p><span>Outils / commandes</span>adduser, usermod, chmod, systemctl et ip addr.</p>
+              <p><span>Vérification</span>Tester les accès avec les comptes concernés et vérifier l'état des services configurés.</p>
+              <p><span>Notion clé</span>Appliquer le principe du moindre privilège et vérifier les droits après chaque modification.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-07-linux.png" alt="Bureau Linux avec terminal ouvert et commandes d'administration." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 08</div>
+            <h4>Virtualisation</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Créer une machine virtuelle pour installer et tester un système isolé de l'ordinateur hôte.</p>
+              <p><span>Démarche</span>Choisir les ressources, installer le système invité et configurer son mode d'accès au réseau.</p>
+              <p><span>Outils / commandes</span>VirtualBox ou VMware, image ISO et paramètres de carte réseau virtuelle.</p>
+              <p><span>Vérification</span>Démarrer la machine, contrôler l'installation et tester l'accès réseau selon le mode choisi.</p>
+              <p><span>Notion clé</span>Le mode NAT facilite l'accès sortant ; le mode pont place la VM sur le réseau local.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-08-virtualization.png" alt="Architecture du noyau Linux et de la couche hyperviseur entre le système et le matériel." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 09</div>
+            <h4>Base de données</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Concevoir une base relationnelle et interroger les données avec SQL.</p>
+              <p><span>Démarche</span>Créer les tables, définir les clés et contraintes, puis insérer et interroger des données.</p>
+              <p><span>Outils / commandes</span>CREATE TABLE, INSERT, SELECT, JOIN et un SGBD comme MySQL ou PostgreSQL.</p>
+              <p><span>Vérification</span>Exécuter des requêtes de sélection et contrôler les relations ainsi que l'intégrité des données.</p>
+              <p><span>Notion clé</span>Les clés primaires et étrangères structurent les relations et limitent les incohérences.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-09-database.png" alt="Diagramme entité-relation d'un schéma de base de données avec clés étrangères." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 10</div>
+            <h4>Sécurité réseau</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Restreindre les flux réseau à l'aide de règles de filtrage adaptées au besoin.</p>
+              <p><span>Démarche</span>Définir les sources, destinations et protocoles autorisés, puis appliquer les règles sur l'interface appropriée.</p>
+              <p><span>Outils / commandes</span>ACL Cisco, access-list, show access-lists et tests ping ou applicatifs.</p>
+              <p><span>Vérification</span>Tester séparément les flux autorisés et bloqués, puis contrôler les compteurs des règles.</p>
+              <p><span>Notion clé</span>L'ordre des règles compte ; prévoir une règle explicite pour chaque flux nécessaire.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-10-security.png" alt="Schéma d'un réseau sécurisé par une zone démilitarisée et des pare-feu." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 11</div>
+            <h4>Docker</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Créer et exécuter un conteneur pour isoler le déploiement d'une application.</p>
+              <p><span>Démarche</span>Télécharger une image, lancer le conteneur, publier un port et consulter son état.</p>
+              <p><span>Outils / commandes</span>docker pull, docker run -d -p, docker ps et docker logs.</p>
+              <p><span>Vérification</span>Vérifier que le conteneur fonctionne et accéder au service depuis le port publié.</p>
+              <p><span>Notion clé</span>Le port hôte doit être correctement relié au port utilisé par l'application dans le conteneur.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-11-docker.png" alt="Schéma d'architecture comparant conteneurs et machines virtuelles." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="tp-card">
+            <div class="tp-card__num">TP 12</div>
+            <h4>Analyse et conception SI</h4>
+            <div class="tp-card__fields">
+              <p><span>Objectif</span>Analyser un besoin et représenter les données et les acteurs d'un système d'information.</p>
+              <p><span>Démarche</span>Recueillir les règles métier, identifier les entités et construire les modèles conceptuel et logique.</p>
+              <p><span>Outils / méthodes</span>MERISE, MCD, MLD et diagrammes UML selon le besoin étudié.</p>
+              <p><span>Vérification</span>Comparer le modèle aux règles métier et contrôler les cardinalités ainsi que les dépendances.</p>
+              <p><span>Notion clé</span>Chaque entité, relation et cardinalité doit traduire une règle métier clairement définie.</p>
+            </div>
+            <figure class="tp-card__media tp-card__media--image">
+              <img src="img/tp-12-uml.png" alt="Exemple de diagramme de classes UML." loading="lazy" decoding="async" />
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PROJETS
+           ======================================================== -->
+      <section id="projets" class="section">
+        <div class="section__head">
+          <span class="section__num">05</span>
+          <h2 class="section__title">Mes projets</h2>
+        </div>
+        <p class="section__intro">
+          Un projet personnel de téléphonie IP et deux pistes de projets à réaliser.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-card__media">
+              <img src="img/unnamed.png" alt="Logo Asterisk" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-card__body">
+              <h4>Serveur VoIP avec Asterisk</h4>
+              <p><span>Description</span>Déploiement d'une solution de téléphonie IP libre pour gérer plusieurs utilisateurs et leurs appels.</p>
+              <p><span>Objectif</span>Installer Asterisk sur Ubuntu 22.04, configurer des comptes PJSIP, organiser les utilisateurs et définir un dialplan.</p>
+              <p><span>Technologies</span>Asterisk, Ubuntu 22.04, SIP/PJSIP, Zoiper et Linphone.</p>
+              <p><span>Compétences</span>Administration Linux, réseau IP, configuration SIP, plan de numérotation et sécurisation des communications.</p>
+              <p><span>Tests prévus</span>Appels audio et vidéo entre softphones ; captures et résultats à ajouter après validation.</p>
+              <div class="project-card__links">
+                <a href="https://github.com/jomozanbo" class="btn btn--small">Profil GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <img src="img/tp-10-security.png" alt="Illustration de principe d'un réseau protégé par une DMZ et des pare-feu." loading="lazy" decoding="async" />
+            </div>
+            <div class="project-card__body">
+              <h4>Maquette réseau segmentée et sécurisée</h4>
+              <p><span>Statut</span>Piste à réaliser</p>
+              <p><span>Description</span>Concevoir un petit réseau d'entreprise séparant les utilisateurs et les services exposés dans une DMZ.</p>
+              <p><span>Objectif</span>Créer plusieurs VLAN, mettre en place le routage inter-VLAN et filtrer les flux avec des ACL.</p>
+              <p><span>Technologies</span>Cisco Packet Tracer, commutateurs, routeur, VLAN 802.1Q et listes de contrôle d'accès.</p>
+              <p><span>Compétences</span>Adressage IP, segmentation, routage, filtrage et diagnostic réseau.</p>
+              <p><span>Validation prévue</span>Tester les communications autorisées et vérifier le blocage des flux interdits ; ajouter les captures après réalisation.</p>
+              <p><span>Visuel</span>Illustration de principe, pas une capture de réalisation.</p>
+              <div class="project-card__links">
+                <a href="https://www.cisco.com/c/en/us/support/docs/lan-switching/virtual-lans-vlan/10023-3.html" class="btn btn--small btn--ghost" target="_blank" rel="noopener noreferrer">Référence Cisco</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <img src="img/tp-11-docker.png" alt="Illustration de principe comparant une application conteneurisée et une machine virtuelle." loading="lazy" decoding="async" />
+            </div>
+            <div class="project-card__body">
+              <h4>Déploiement d'une application web avec Docker</h4>
+              <p><span>Statut</span>Piste à réaliser</p>
+              <p><span>Description</span>Empaqueter une petite application web dans un conteneur et la rendre accessible sur le réseau local.</p>
+              <p><span>Objectif</span>Créer une image avec un Dockerfile, lancer le conteneur, publier un port et documenter son démarrage.</p>
+              <p><span>Technologies</span>Linux, Docker, Dockerfile, Nginx et Docker Compose.</p>
+              <p><span>Compétences</span>Conteneurisation, gestion des ports, réseau Docker, consultation des journaux et documentation.</p>
+              <p><span>Validation prévue</span>Accéder à la page web, contrôler le conteneur avec docker ps et consulter ses journaux ; ajouter les captures après réalisation.</p>
+              <p><span>Visuel</span>Illustration de principe, pas une capture de réalisation.</p>
+              <div class="project-card__links">
+                <a href="https://docs.docker.com/get-started/" class="btn btn--small btn--ghost" target="_blank" rel="noopener noreferrer">Documentation Docker</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           MON ÉVOLUTION
+           ======================================================== -->
+      <section id="evolution" class="section">
+        <div class="section__head">
+          <span class="section__num">06</span>
+          <h2 class="section__title">Mon évolution</h2>
+        </div>
+
+        <div class="evolution-grid">
+          <div class="evolution-step">
+            <span class="evo-num">01</span>
+            <h4>Découverte</h4>
+            <p>Découverte des concepts fondamentaux.</p>
+          </div>
+          <div class="evolution-step">
+            <span class="evo-num">02</span>
+            <h4>Compréhension</h4>
+            <p>Compréhension du fonctionnement des systèmes et réseaux.</p>
+          </div>
+          <div class="evolution-step">
+            <span class="evo-num">03</span>
+            <h4>Pratique</h4>
+            <p>Mise en pratique à travers les TP et projets.</p>
+          </div>
+          <div class="evolution-step">
+            <span class="evo-num">04</span>
+            <h4>Progression</h4>
+            <p>Développement progressif de mes compétences techniques.</p>
+          </div>
+        </div>
+
+        <blockquote class="evolution-quote">
+          « Chaque projet et chaque difficulté rencontrée m'ont permis de mieux comprendre
+          les technologies que j'étudie. »
+        </blockquote>
+      </section>
+
+      <!-- ========================================================
+           OUTILS & TECHNOLOGIES
+           ======================================================== -->
+      <section id="outils" class="section">
+        <div class="section__head">
+          <span class="section__num">07</span>
+          <h2 class="section__title">Outils &amp; technologies</h2>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tools-col">
+            <h4>Réseaux</h4>
+            <ul class="chip-list"><li>Cisco Packet Tracer</li><li>Cisco</li><li>Wireshark</li></ul>
+          </div>
+          <div class="tools-col">
+            <h4>Systèmes</h4>
+            <ul class="chip-list"><li>Windows</li><li>Linux</li><li>VMware</li><li>VirtualBox</li></ul>
+          </div>
+          <div class="tools-col">
+            <h4>Conteneurs</h4>
+            <ul class="chip-list"><li>Docker</li></ul>
+          </div>
+          <div class="tools-col">
+            <h4>Bases de données</h4>
+            <ul class="chip-list"><li>MySQL</li><li>PostgreSQL</li><li>Oracle</li><li>MongoDB</li></ul>
+          </div>
+          <div class="tools-col">
+            <h4>Développement</h4>
+            <ul class="chip-list"><li>Python</li><li>Django</li><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </div>
+          <div class="tools-col">
+            <h4>Outils</h4>
+            <ul class="chip-list"><li>VS Code</li><li>Git</li><li>GitHub</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           CERTIFICATIONS
+           ======================================================== -->
+      <section id="certifications" class="section">
+        <div class="section__head">
+          <span class="section__num">08</span>
+          <h2 class="section__title">Certifications &amp; formations</h2>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>CCNA</h4>
+            <span class="cert-status">En cours</span>
+          </div>
+          <div class="cert-card">
+            <h4>Formation réseau</h4>
+            <span class="cert-status">En cours</span>
+          </div>
+          <div class="cert-card">
+            <h4>Formation cybersécurité</h4>
+            <span class="cert-status">En cours</span>
+          </div>
+          <div class="cert-card">
+            <h4>Autre certification</h4>
+            <span class="cert-status">En cours</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           OBJECTIF PROFESSIONNEL
+           ======================================================== -->
+      <section id="objectif" class="section">
+        <div class="section__head">
+          <span class="section__num">09</span>
+          <h2 class="section__title">Mon objectif</h2>
+        </div>
+
+        <div class="objective-card">
+          <p>
+            Mon objectif est de continuer à développer mes compétences dans les systèmes,
+            les réseaux, la cybersécurité et les infrastructures informatiques afin de
+            devenir un professionnel capable de <strong>concevoir, administrer, sécuriser
+            et maintenir</strong> des environnements informatiques fiables.
+          </p>
+          <ul class="chip-list chip-list--center">
+            <li>Administration réseau</li>
+            <li>Cybersécurité</li>
+            <li>Cloud</li>
+            <li>DevOps</li>
+            <li>Infrastructure</li>
+            <li>Systèmes</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           CONTACT
+           ======================================================== -->
+      <section id="contact" class="section">
+        <div class="section__head">
+          <span class="section__num">10</span>
+          <h2 class="section__title">Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Restons en contact</h3>
+            <ul class="contact-list">
+              <li><span>Nom</span><strong>Joseph WODOME</strong></li>
+              <li><span>Localisation</span><strong>Lomé, Togo</strong></li>
+              <li><span>GitHub</span><a href="https://github.com/jomozanbo">github.com/jomozanbo</a></li>
+              <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/joseph-wodome-0862ba3aa/">linkedin.com/in/joseph-wodome-0862ba3aa</a></li>
+            </ul>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <label>
+              <span>Nom</span>
+              <input type="text" name="name" required placeholder="Votre nom" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="vous@exemple.com" />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" required placeholder="Votre message..."></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary">Envoyer</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           FOOTER
+           ======================================================== -->
+      <footer class="footer">
+        <p>© 2026 Joseph WODOME — Portfolio Systèmes &amp; Réseaux Informatiques</p>
+        <nav class="footer__nav">
+          <a href="#accueil">Accueil</a>
+          <a href="#apropos">À propos</a>
+          <a href="#competences">Compétences</a>
+          <a href="#projets">Projets</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </footer>
+
+    </main>
+  </div>
+
+  <svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="m10.7 7.2-4.4 8.6m7-8.6 4.4 8.6M7.5 18h9"/></symbol>
+    <symbol id="icon-switch" viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h3a3 3 0 0 0 3-3V9a3 3 0 0 1 3-3m-8 6 3 3-3 3"/></symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="icon-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V6l8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9m-4 4 3 3m-6-1 3 3"/></symbol>
+    <symbol id="icon-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+    <symbol id="icon-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+    <symbol id="icon-box" viewBox="0 0 24 24"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Z"/><path d="m3.5 8.3 8.5 5 8.5-5M12 13.3V21m-4-16 9 5"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.6-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.6 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z" transform="translate(-1 -2) scale(1.08)"/></symbol>
+    <symbol id="icon-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="m10 13.5 4-4m-6.5 7H6a4 4 0 0 1 0-8h4m4-1h4a4 4 0 0 1 0 8h-4"/></symbol>
+    <symbol id="icon-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 10h6m-6 4h6m-6 4h3"/></symbol>
+    <symbol id="icon-diagram" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4m-6 4v-2h12v2"/></symbol>
+    <symbol id="icon-wifi" viewBox="0 0 24 24"><path d="M3 9a14 14 0 0 1 18 0M6.5 12.5a9 9 0 0 1 11 0M10 16a4 4 0 0 1 4 0M12 20h.01"/></symbol>
+    <symbol id="icon-antenna" viewBox="0 0 24 24"><path d="m12 13-4 8m4-8 4 8m-7 0h6M12 3v10m-4-7a6 6 0 0 0 0 8m8-8a6 6 0 0 1 0 8m-11-11a11 11 0 0 0 0 14m14-14a11 11 0 0 1 0 14"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="m16 8 5-5m-4 0h4v4"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1H3Zm13-15a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 5v1h-3"/></symbol>
+  </svg>
+  <script src="js/script.js"></script>
+</body>
+</html>
